@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
 
   int i = 0;
   float float1, float2;
-  int maxVectorSize = 100;
+  int maxVectorSize = 10;
   double *vector1 = (double *)malloc(maxVectorSize*sizeof(double));
   double *vector2 = (double *)malloc(maxVectorSize*sizeof(double));  
   int vectorSize = 0;
@@ -29,6 +29,19 @@ int main(int argc, char **argv) {
 
     if (vectorSize == maxVectorSize) {
       // some code needed here I think .. programming exercise
+
+      // allocate larger vectors
+      double *tmp = (double *)malloc((maxVectorSize + 10)*sizeof(double));
+      for (int i=0; i<maxVectorSize; tmp[i]=vector1[i], i++) {}
+      free(vector1);
+      vector1 = tmp;
+
+      tmp = (double *)malloc((maxVectorSize + 10)*sizeof(double));
+      for (int i=0; i<maxVectorSize; tmp[i]=vector2[i], i++) {}
+      free(vector2);
+      vector2 = tmp;
+      
+      maxVectorSize += 10;
     }
   }
 

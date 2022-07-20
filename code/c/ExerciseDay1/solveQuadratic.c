@@ -21,7 +21,19 @@ int main(int argc, char **argv) {
   float b = atof(argv[2]);
   float c = atof(argv[3]);
 
-  printf("Have a Nice Day!\n");
+  float p = -b/2.0;
+  float q = b*b - 4.0*a*c;
+
+  if (q < 0.0 ) { return 1; }
+
+  q = sqrt(q) / (2.0*a);
+
+  float x1 = p + q;
+  float x2 = p - q;
+
+  //printf("Have a Nice Day!\n");
+  printf("Solution x1 = %f\n", x1);
+  printf("Solution x2 = %f\n", x2);
   return 0;
 }
 

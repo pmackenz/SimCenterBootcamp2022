@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [ -x ./Exercise2-3 ]
+if [ -x ./build/Exercise2-3 ]
 then
-	./Exercise2-3 5.0 > list.csv
+	./build/Exercise2-3 5.0 > list.csv
 fi
 
 if [ -x ${HOME}/bin/python3 ]
